@@ -12,6 +12,11 @@ import java.util.Scanner;
  * @author hldua
  */
 public class ValidarFecha {
+    
+    public static String read(){
+        Scanner sc = new Scanner(System.in);
+        return sc.nextLine();
+    }
 
     /**
      * @param args the command line arguments
@@ -19,13 +24,22 @@ public class ValidarFecha {
     public static void main(String[] args) {
         // TODO code application logic here
 
-        Scanner sc = new Scanner(System.in); // Inicializamos Scanner para capturar datos desde el teclado
+        /*Scanner sc = new Scanner(System.in); // Inicializamos Scanner para capturar datos desde el teclado
         System.out.println("Ingrese el dia: ");
         int dia = sc.nextInt();
         System.out.println("Ingrese el Mes: ");
         int mes = sc.nextInt();
         System.out.println("Ingrese el año: ");
-        int anio = sc.nextInt();
+        int anio = sc.nextInt();*/
+        
+        System.out.println("Ingresa la fecha dd mm aaaa");
+        
+        String datos = read();
+        String [] fecha =  datos.split(" ");
+        
+        int dia = Integer.parseInt(fecha[0]);
+        int mes = Integer.parseInt(fecha[1]);
+        int anio = Integer.parseInt(fecha[2]);
 
         if (anio >= 1900 && anio <= 2099) {
             if (mes >= 1 && mes <= 12) {
